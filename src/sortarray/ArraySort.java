@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package sortarray;
+import java.util.Random;
+import java.util.Arrays;
 
 /**
  *
@@ -55,18 +57,27 @@ public class ArraySort {
             System.out.print(arr[i] + " "); 
         System.out.println(); 
     } 
+        static  int [] generateRandom() {
+      Random rd = new Random(); // creating Random object
+      int max_size = 500;
+      int[] arr = new int[rd.nextInt(max_size)];
+      for (int i = 0; i < arr.length; i++) {
+         arr[i] = rd.nextInt(); 
+         
+      }
+   
+      return arr;
+          }
   
     // Driver method to test above 
     public static void main(String args[]) 
     { 
         ArraySort ob = new ArraySort(); 
-        int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
+        int arr[] = generateRandom();
         ob.bubbleSort(arr); 
         System.out.println("Sorted array"); 
         ob.printArray(arr); 
-        ob.selectionsort(arr); 
-        System.out.println("Sorted array"); 
-        ob.printArray(arr); 
+       
     }
     
 }
